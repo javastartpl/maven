@@ -1,6 +1,3 @@
-docker rm docker-app
 docker build -t javastart/docker-application:latest .
-docker rm docker-app
-docker create -it --name docker-app javastart/docker-application
-docker start -ia docker-app
-docker run -it --rm --name docker-app javastart/docker-application
+docker volume create docker-app-volume
+docker run -it --name docker-app-v2 -v docker-app-volume:/opt/volume-data javastart/docker-application
