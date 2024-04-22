@@ -5,4 +5,5 @@ RUN echo 'https://packages.adoptium.net/artifactory/apk/alpine/main' >> /etc/apk
 RUN apk add temurin-21-jdk
 COPY . /opt/
 WORKDIR /opt
+#VOLUME /opt/data
 ENTRYPOINT ["java", "Application.java"]
