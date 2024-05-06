@@ -1,7 +1,7 @@
 FROM eclipse-temurin:21-alpine
-COPY . /tmp/build
-WORKDIR /tmp/build
+COPY . /build
+WORKDIR /build
 RUN ./mvnw clean package
-RUN cp /tmp/build/target/*.jar /opt/app.jar && rm -r /tmp/build
+RUN cp /build/target/*.jar /opt/app.jar
 WORKDIR /opt
 ENTRYPOINT ["java", "-jar", "app.jar"]

@@ -1,0 +1,24 @@
+% docker history javastart/password-app
+IMAGE          CREATED         CREATED BY                                      SIZE
+bc2fc29a1161   2 minutes ago   ENTRYPOINT ["java" "-jar" "app.jar"]            0B
+<missing>      2 minutes ago   WORKDIR /opt                                    0B
+<missing>      2 minutes ago   RUN /bin/sh -c cp /build/target/*.jar /opt/a…   21.3MB
+<missing>      2 minutes ago   RUN /bin/sh -c rm -rf ~/.m2 # buildkit          0B
+<missing>      2 minutes ago   RUN /bin/sh -c ./mvnw clean package # buildk…   26MB
+<missing>      2 minutes ago   COPY src /build/src # buildkit                  4.72kB
+<missing>      2 minutes ago   RUN /bin/sh -c ./mvnw dependency:go-offline …   106MB
+<missing>      2 minutes ago   WORKDIR /build                                  0B
+<missing>      2 minutes ago   COPY mvnw pom.xml /build/ # buildkit            12.6kB
+<missing>      2 minutes ago   COPY .mvn /build/.mvn # buildkit                63.6kB
+<missing>      12 days ago     CMD ["jshell"]                                  0B
+<missing>      12 days ago     ENTRYPOINT ["/__cacert_entrypoint.sh"]          0B
+<missing>      12 days ago     COPY entrypoint.sh /__cacert_entrypoint.sh #…   1.17kB
+<missing>      12 days ago     RUN /bin/sh -c set -eux;     echo "Verifying…   0B
+<missing>      12 days ago     RUN /bin/sh -c set -eux;     ARCH="$(apk --p…   303MB
+<missing>      12 days ago     ENV JAVA_VERSION=jdk-21.0.3+9                   0B
+<missing>      12 days ago     RUN /bin/sh -c set -eux;     apk add --no-ca…   35.3MB
+<missing>      12 days ago     ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_AL…   0B
+<missing>      12 days ago     ENV PATH=/opt/java/openjdk/bin:/usr/local/sb…   0B
+<missing>      12 days ago     ENV JAVA_HOME=/opt/java/openjdk                 0B
+<missing>      3 months ago    /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
+<missing>      3 months ago    /bin/sh -c #(nop) ADD file:d0764a717d1e9d0af…   7.73MB

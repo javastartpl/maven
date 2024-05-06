@@ -1,11 +1,10 @@
 % docker history javastart/password-app
 IMAGE          CREATED              CREATED BY                                      SIZE
-ae153876381d   About a minute ago   ENTRYPOINT ["java" "-jar" "app.jar"]            0B
+2e6512d14c83   About a minute ago   ENTRYPOINT ["java" "-jar" "app.jar"]            0B
 <missing>      About a minute ago   WORKDIR /opt                                    0B
-<missing>      About a minute ago   RUN /bin/sh -c cp /build/target/*.jar /opt/a…   21.3MB
-<missing>      About a minute ago   RUN /bin/sh -c ./mvnw clean package # buildk…   96.9MB
-<missing>      About a minute ago   WORKDIR /build                                  0B
-<missing>      About a minute ago   COPY . /build # buildkit                        21.4MB
+<missing>      About a minute ago   RUN /bin/sh -c ./mvnw clean package &&      …   21.3MB
+<missing>      2 minutes ago        WORKDIR /build                                  0B
+<missing>      2 minutes ago        COPY . /build # buildkit                        91.3kB
 <missing>      12 days ago          CMD ["jshell"]                                  0B
 <missing>      12 days ago          ENTRYPOINT ["/__cacert_entrypoint.sh"]          0B
 <missing>      12 days ago          COPY entrypoint.sh /__cacert_entrypoint.sh #…   1.17kB
@@ -18,14 +17,3 @@ ae153876381d   About a minute ago   ENTRYPOINT ["java" "-jar" "app.jar"]        
 <missing>      12 days ago          ENV JAVA_HOME=/opt/java/openjdk                 0B
 <missing>      3 months ago         /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
 <missing>      3 months ago         /bin/sh -c #(nop) ADD file:d0764a717d1e9d0af…   7.73MB
-
-
-% docker build -t javastart/password-app:latest .
-[+] Building 24.7s (11/11) FINISHED
-...
- => CACHED [1/6] FROM docker.io/library/eclipse-temurin:21-alpine...    0.0s
-=> [2/6] COPY . /build                                                  0.0s
-=> [3/6] WORKDIR /build                                                 0.0s
-=> [4/6] RUN ./mvnw clean package                                       23.7s
-=> [5/6] RUN cp /build/target/*.jar /opt/app.jar                        0.2s
-=> [6/6] WORKDIR /opt                                                   0.0s
