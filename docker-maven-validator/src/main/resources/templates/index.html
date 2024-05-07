@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Walidator haseł</title>
+</head>
+<body>
+<h1>Sprawdź siłę hasła</h1>
+<form th:action="@{/validate}" method="post">
+    <div>
+        <input name="password" th:value="${password}" placeholder="Wprowadź hasło">
+    </div>
+    <button>Sprawdź</button>
+</form>
+<ul th:if="${violations}">
+    <li th:each="violation: ${violations}"
+        th:text="${violation}">
+        Złamana reguła
+    </li>
+</ul>
+</body>
+</html>
