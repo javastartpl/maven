@@ -5,6 +5,7 @@ WORKDIR /build
 RUN ./mvnw dependency:go-offline
 COPY src /build/src
 RUN ./mvnw clean package
-RUN cp /build/target/*.jar /opt/app.jar
+RUN cp /build/target/validator-*.jar /opt/app.jar
 WORKDIR /opt
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
