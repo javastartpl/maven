@@ -1,0 +1,16 @@
+docker run \
+    --rm \
+    --name mysql \
+    -e MYSQL_ROOT_PASSWORD=tajneHaslo \
+    -d \
+    mysql:8.4.0
+
+docker run \
+	--rm \
+	--name mysql \
+	-e MYSQL_ROOT_PASSWORD=tajneHaslo \
+	-v mysql-data:/var/lib/mysql \
+	-d \
+	mysql:8.4.0
+
+docker volume ls

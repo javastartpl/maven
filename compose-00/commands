@@ -1,0 +1,2 @@
+docker build -t javastart/jchat .
+docker run -d --rm --name jchat -p 8080:8080 javastart/jchat

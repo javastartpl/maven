@@ -1,0 +1,51 @@
+docker run \
+	--rm \
+	--name mysql \
+	-e MYSQL_ROOT_PASSWORD=tajneHaslo \
+	-e MYSQL_DATABASE=jchat \
+	-v jchat-volume:/var/lib/mysql \
+	-d \
+	mysql:8.4.0
+
+docker build -t javastart/jchat .
+
+docker run -it --rm --name jchat -p 8080:8080 javastart/jchat
+
+## Kontener <> Host
+
+docker stop mysql
+
+docker run \
+	--rm \
+	--name mysql \
+	-e MYSQL_ROOT_PASSWORD=tajneHaslo \
+	-e MYSQL_DATABASE=jchat \
+	-v jchat-volume:/var/lib/mysql \
+	-p 3306:3306 \
+	-d \
+	mysql:8.4.0
+
+##Network
+
+docker network create jchat-network
+
+docker network ls
+
+docker run \
+	--rm \
+	--name mysql \
+	-e MYSQL_ROOT_PASSWORD=tajneHaslo \
+	-e MYSQL_DATABASE=jchat \
+	-v jchat-volume:/var/lib/mysql \
+	--network jchat-network \
+	-d \
+	mysql:8.4.0
+
+docker run \
+	-it \
+	--rm \
+	--name jchat \
+	--network jchat-network \
+	-p 8080:8080 \
+	javastart/jchat
+
