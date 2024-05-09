@@ -12,6 +12,9 @@
     <p>Pełną historię czata znajdziesz <a href="#" th:href="@{/history}">tutaj</a>.</p>
 </header>
 <main>
+    <p>
+        <a href="#" th:href="@{/}">Zobacz aktualne wiadomości</a>
+    </p>
     <ul class="message-list" th:remove="all-but-first">
         <li th:each="msg: ${messages}"
             th:object="${msg}"

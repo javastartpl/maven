@@ -11,8 +11,6 @@
 	<groupId>pl.javastart</groupId>
 	<artifactId>jchat</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>compose-00</name>
-	<description>compose-00</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
