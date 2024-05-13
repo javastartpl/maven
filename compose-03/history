@@ -1,0 +1,11 @@
+% docker compose up
+[+] Running 11/11
+ ✔ mysql 10 layers [⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]
+...
+[+] Building 3.2s (15/15) FINISHED
+...
+[+] Running 3/0
+ ✔ Network jchat_default  Created
+ ✔ Container jchat        Created
+ ✔ Container mysql        Created
+Attaching to jchat, mysql
