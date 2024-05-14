@@ -1,0 +1,1 @@
+Określanie zależności między kontenerami
