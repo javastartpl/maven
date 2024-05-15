@@ -1,0 +1,8 @@
+% docker compose up --build -d application
+[+] Building 9.8s (15/15) FINISHED
+...
+ => => writing image sha256:...
+ => => naming to docker.io/javastart/jchat:1.0
+[+] Running 2/2
+ ✔ Container mysql  Healthy
+ ✔ Container jchat  Started

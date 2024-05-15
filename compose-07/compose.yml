@@ -9,6 +9,12 @@ services:
       - "MYSQL_DATABASE=jchat"
     volumes:
       - jchat-volume:/var/lib/mysql
+    healthcheck:
+      test: mysqladmin ping --protocol tcp
+      interval: 5s
+      timeout: 1s
+      retries: 3
+      start_period: 10s
 
   application:
     container_name: jchat
@@ -19,6 +25,12 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+    healthcheck:
+      test: wget --spider localhost:8080
+      interval: 5s
+      timeout: 1s
+      retries: 3
+      start_period: 10s
 
 volumes:
   jchat-volume:

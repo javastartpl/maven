@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>JavaCzat</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}">
+    <meta charset="UTF-8">
+</head>
+<body>
+<header>
+    <h1>Historia czatu</h1>
+    <p>
+        <a href="#" th:href="@{/}">
+            Powrót do strony głównej
+        </a>
+    </p>
+</header>
+<main>
+    <ul class="message-list" th:remove="all-but-first" th:replace="index :: message-list">
+        <li>piotrek : cześć chłopaki! co słychać?</li>
+        <li>marcin : siemka. Uczę się Javy, nieźle mi idzie.</li>
+        <li>karol : elegancko, powodzenia :)</li>
+    </ul>
+</main>
+</body>
+</html>
