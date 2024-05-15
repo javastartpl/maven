@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build: ./front
+    networks:
+      - frontend-network
+  backend:
+    build: ./app
+    networks:
+      - frontend-network
+      - backend-network
+  db:
+    image: postgres
+    networks:
+      - backend-network
+
+networks:
+  frontend:
+  backend:
