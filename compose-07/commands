@@ -1,0 +1,6 @@
+docker compose exec mysql sh
+
+mysqladmin ping
+echo $?
+
+docker compose down -v --rmi all

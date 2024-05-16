@@ -1,0 +1,25 @@
+name: jchat
+
+services:
+  mysql:
+    image: mysql:8.4.0
+    container_name: mysql
+    environment:
+      - "MYSQL_ROOT_PASSWORD=tajneHaslo"
+      - "MYSQL_DATABASE=jchat"
+    volumes:
+      - mysqldb:/var/lib/mysql
+
+  application:
+    build: .
+    image: javastart/jchat
+    pull_policy: never
+    container_name: jchat
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  mysqldb:

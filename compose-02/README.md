@@ -1,0 +1,1 @@
+Wykonywanie poleceń w kontenerze

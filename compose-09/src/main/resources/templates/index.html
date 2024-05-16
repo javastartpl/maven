@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>JavaCzat</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}">
+    <meta charset="UTF-8">
+</head>
+<body>
+<header>
+    <h1>Witaj na JavaCzacie!</h1>
+    <p>Poniżej widzisz ostatnie wiadomości</p>
+    <p>Pełną historię czata znajdziesz <a href="#" th:href="@{/history}">tutaj</a>.</p>
+</header>
+<main>
+    <p>
+        <a href="#" th:href="@{/}">Zobacz aktualne wiadomości</a>
+    </p>
+    <ul class="message-list" th:remove="all-but-first" th:fragment="message-list">
+        <li th:each="msg: ${messages}"
+            th:object="${msg}"
+            th:text="|*{#temporals.format(time, 'yyyy-MM-dd HH:mm:ss')} : *{author} : *{message}|">
+            karol : elegancko, powodzenia :)
+        </li>
+        <li>marcin : siemka. Uczę się Javy, nieźle mi idzie.</li>
+        <li>piotrek : cześć chłopaki! co słychać?</li>
+    </ul>
+    <form action="" method="post">
+        <textarea name="message" placeholder="Twoja wiadomość" rows="5" required></textarea>
+        <input name="author" placeholder="Twoja nazwa" required>
+        <button>Wyślij</button>
+    </form>
+</main>
+</body>
+</html>

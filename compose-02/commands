@@ -1,0 +1,24 @@
+docker exec mysql touch /tmp/newfile.txt
+
+docker exec mysql ls /tmp
+
+docker exec -it mysql sh
+
+# SQL
+
+create database users;
+
+use users;
+
+create table users(
+	user_id int primary key,
+    username varchar(30) not null,
+    password varchar(50) not null
+);
+
+insert into users (user_id, username, password)
+	values
+	(1, 'jan', 'pass1'),
+	(2, 'kasia', 'abc123');
+
+select * from users;
