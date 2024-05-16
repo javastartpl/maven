@@ -19,10 +19,10 @@
         <li th:each="msg: ${messages}"
             th:object="${msg}"
             th:text="|*{#temporals.format(time, 'yyyy-MM-dd HH:mm:ss')} : *{author} : *{message}|">
-            piotrek : cześć chłopaki! co słychać?
+            karol : elegancko, powodzenia :)
         </li>
         <li>marcin : siemka. Uczę się Javy, nieźle mi idzie.</li>
-        <li>karol : elegancko, powodzenia :)</li>
+        <li>piotrek : cześć chłopaki! co słychać?</li>
     </ul>
     <form action="" method="post">
         <textarea name="message" placeholder="Twoja wiadomość" rows="5" required></textarea>

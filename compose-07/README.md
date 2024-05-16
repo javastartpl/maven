@@ -1,1 +1,0 @@
-Wprowadzanie zmian

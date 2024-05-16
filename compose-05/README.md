@@ -1,1 +1,0 @@
-Healthcheck dla aplikacji webowej
