@@ -5,8 +5,8 @@ services:
     image: mysql:8.4.0
     container_name: mysql
     environment:
-      - "MYSQL_ROOT_PASSWORD=tajneHaslo"
-      - "MYSQL_DATABASE=jchat"
+      - "MYSQL_ROOT_PASSWORD=${DB_PASSWORD}"
+      - "MYSQL_DATABASE=${DB_NAME}"
     volumes:
       - mysqldb:/var/lib/mysql
     healthcheck:
@@ -19,10 +19,12 @@ services:
   application:
     build: .
     image: javastart/jchat
-    pull_policy: build
+    pull_policy: never
     container_name: jchat
     ports:
       - "8080:8080"
+    env_file:
+      - .env
     depends_on:
       mysql:
         condition: service_healthy

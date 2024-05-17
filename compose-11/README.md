@@ -1,0 +1,1 @@
+Zmienne środowiskowe
