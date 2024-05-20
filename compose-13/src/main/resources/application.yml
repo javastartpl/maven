@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: javachat
+  jpa:
+    hibernate:
+      ddl-auto: create
+  docker:
+    compose:
+      file: compose-database.yml
+      profiles:
+        active: dev
+      stop:
+        command: down

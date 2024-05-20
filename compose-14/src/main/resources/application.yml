@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: javachat
+  jpa:
+    hibernate:
+      ddl-auto: create
