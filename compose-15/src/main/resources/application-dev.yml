@@ -1,0 +1,10 @@
+spring:
+  docker:
+    compose:
+      file: compose-database.yml
+      profiles:
+        active: dev
+      stop:
+        command: stop
+      skip:
+        in-tests: false
