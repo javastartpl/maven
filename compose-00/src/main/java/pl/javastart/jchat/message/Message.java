@@ -1,17 +1,19 @@
 package pl.javastart.jchat.message;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
-import java.util.UUID;
 
 @Entity
 class Message {
 
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private LocalDateTime time;
     private String author;
     private String message;
@@ -19,18 +21,17 @@ class Message {
     protected Message() {
     }
 
-    public Message(UUID id, LocalDateTime time, String author, String message) {
-        this.id = id;
+    public Message(LocalDateTime time, String author, String message) {
         this.time = time;
         this.author = author;
         this.message = message;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

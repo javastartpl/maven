@@ -1,1 +1,1 @@
-docker compose exec application sh
+docker compose up --build -d application

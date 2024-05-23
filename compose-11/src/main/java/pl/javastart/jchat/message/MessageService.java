@@ -20,7 +20,6 @@ class MessageService {
 
     void createMessage(CreateMessageRequest messageRequest) {
         Message message = new Message(
-                UUID.randomUUID(),
                 LocalDateTime.now(),
                 messageRequest.author(),
                 messageRequest.message()
