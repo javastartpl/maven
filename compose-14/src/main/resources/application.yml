@@ -3,4 +3,7 @@ spring:
     name: javachat
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
+  sql:
+    init:
+      mode: always

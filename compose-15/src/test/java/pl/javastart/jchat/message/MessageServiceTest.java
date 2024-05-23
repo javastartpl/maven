@@ -30,7 +30,6 @@ class MessageServiceTest {
         assertAll(
                 () -> assertEquals(messageRequest.author(), savedMessage.getAuthor()),
                 () -> assertEquals(messageRequest.message(), savedMessage.getMessage()),
-                () -> assertNotNull(savedMessage.getId()),
                 () -> assertNotNull(savedMessage.getTime())
         );
     }

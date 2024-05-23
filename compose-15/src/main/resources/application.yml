@@ -1,9 +1,9 @@
 spring:
   application:
     name: javachat
-  sql:
-    init:
-      mode: always
   jpa:
     hibernate:
       ddl-auto: validate
+  sql:
+    init:
+      mode: always
