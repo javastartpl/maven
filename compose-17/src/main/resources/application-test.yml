@@ -1,0 +1,6 @@
+spring:
+#  datasource:
+#    url: jdbc:tc:mysql:8.4.0:///databasename
+  sql:
+    init:
+      data-locations: classpath:testdata.sql
