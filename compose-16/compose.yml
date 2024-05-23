@@ -1,0 +1,5 @@
+name: jchat
+
+include:
+  - compose-database.yml
+  - compose-application.yml

@@ -1,0 +1,13 @@
+spring:
+  docker:
+    compose:
+      file: compose-database.yml
+      profiles:
+        active: dev
+      stop:
+        command: down
+      skip:
+        in-tests: false
+  sql:
+    init:
+      data-locations: classpath:testdata.sql
